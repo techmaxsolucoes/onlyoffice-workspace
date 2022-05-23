@@ -3,13 +3,17 @@ OnlyOffice - Community Server - Docker-compose
 
 Preparado para cambiar por docker-compose.workspace.yml
 
-Ver vídeo: https://youtu.be/Wra3dcA0X-I
+Ver vídeos:
 
-Se elimina la instalación de mail-server
+https://youtu.be/Wra3dcA0X-I
 
-Imágenes actualizadas 
+https://youtu.be/YT95RJQu0f8
 
-Se cambian puertos
+Se elimina la instalación de mail-server.
+
+Imágenes actualizadas. 
+
+Se cambian puertos.
 
 Ver en "localhost:8200"
 
