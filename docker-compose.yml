@@ -19,7 +19,7 @@ services:
      
   onlyoffice-community-server:
     container_name: onlyoffice-community-server
-    image: onlyoffice/communityserver:11.6.0.1620
+    image: onlyoffice/communityserver:12.0.0.1726
     depends_on:
      - onlyoffice-mysql-server
      - onlyoffice-document-server
