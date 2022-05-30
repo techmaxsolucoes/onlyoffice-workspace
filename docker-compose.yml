@@ -64,7 +64,7 @@ services:
      
   onlyoffice-document-server:
     container_name: onlyoffice-document-server
-    image: onlyoffice/documentserver:7.0.1.37
+    image: onlyoffice/documentserver:7.1.0.215
     stdin_open: true
     tty: true
     restart: always
@@ -116,7 +116,7 @@ services:
      - onlyoffice-document-server
 #     - onlyoffice-mail-server
      - onlyoffice-community-server
-    image: onlyoffice/controlpanel:3.0.3.410
+    image: onlyoffice/controlpanel:3.1.0.460
     environment:
      - ONLYOFFICE_CORE_MACHINEKEY=core_secret
     expose:
