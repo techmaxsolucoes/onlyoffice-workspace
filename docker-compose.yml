@@ -4,7 +4,7 @@ services:
 
   onlyoffice-mysql-server:
     container_name: onlyoffice-mysql-server
-    image: mysql:5.7
+    image: mysql:8.0.29
     environment:
      - MYSQL_ROOT_PASSWORD=my-secret-pw
     networks:
@@ -19,7 +19,7 @@ services:
      
   onlyoffice-community-server:
     container_name: onlyoffice-community-server
-    image: onlyoffice/communityserver:12.0.0.1726
+    image: onlyoffice/communityserver:12.0.1.1748
     depends_on:
      - onlyoffice-mysql-server
      - onlyoffice-document-server
