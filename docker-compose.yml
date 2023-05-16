@@ -47,8 +47,8 @@ services:
     networks:
      - onlyoffice
     ports:
-     - '8200:80'
-     - '8443:443'
+     - '1480:80'
+     - '1481:443'
      - '5222:5222'
     stdin_open: true
     tty: true
@@ -75,8 +75,8 @@ services:
     networks:
       - onlyoffice
     expose:
-      - '80'
-      - '443'
+      - '1482:80'
+      - '1483:443'
     volumes:
        - document_data:/var/www/onlyoffice/Data
        - document_log:/var/log/onlyoffice
@@ -120,8 +120,8 @@ services:
     environment:
      - ONLYOFFICE_CORE_MACHINEKEY=core_secret
     expose:
-      - '80'
-      - '443'
+      - '1484:80'
+      - '1485:443'
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
