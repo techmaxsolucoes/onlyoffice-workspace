@@ -61,7 +61,33 @@ services:
      - document_data:/var/www/onlyoffice/DocumentServerData
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
      - ./certs:/var/www/onlyoffice/Data/certs
-     
+  
+  onlyoffice-elasticsearch:
+    image: onlyoffice/elasticsearch:7.16.3
+    container_name: onlyoffice-elasticsearch
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true"
+      - "indices.fielddata.cache.size=30%"
+      - "indices.memory.index_buffer_size=30%" 
+      - "ingest.geoip.downloader.enabled=false"
+    networks:
+    - onlyoffice    
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    expose:
+      - "9200"
+      - "9300"
+  
   onlyoffice-document-server:
     container_name: onlyoffice-document-server
     image: onlyoffice/documentserver:7.1.0.215
@@ -141,6 +167,7 @@ volumes:
 #  mail_certs:
 #  mail_log:
 #  mail_mysql:
+  es_data:
   document_data:
   document_log:
   document_forgotten:
